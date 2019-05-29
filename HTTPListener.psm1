@@ -1,4 +1,4 @@
-﻿# Copyright (c) 2014 Microsoft Corp.
+# Copyright (c) 2014 Microsoft Corp.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -102,10 +102,10 @@ Function Start-HTTPListener {
     Process {
         $ErrorActionPreference = "Stop"
 
-        $CurrentPrincipal = New-Object Security.Principal.WindowsPrincipal( [Security.Principal.WindowsIdentity]::GetCurrent())
-        if ( -not ($currentPrincipal.IsInRole( [Security.Principal.WindowsBuiltInRole]::Administrator ))) {
-            Write-Error "This script must be executed from an elevated PowerShell session" -ErrorAction Stop
-        }
+#        $CurrentPrincipal = New-Object Security.Principal.WindowsPrincipal( [Security.Principal.WindowsIdentity]::GetCurrent())
+#        if ( -not ($currentPrincipal.IsInRole( [Security.Principal.WindowsBuiltInRole]::Administrator ))) {
+#            Write-Error "This script must be executed from an elevated PowerShell session" -ErrorAction Stop
+#        }
 
         if ($Url.Length -gt 0 -and -not $Url.EndsWith('/')) {
             $Url += "/"
